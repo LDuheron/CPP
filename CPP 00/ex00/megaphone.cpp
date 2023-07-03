@@ -6,24 +6,41 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 10:55:01 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/03 10:55:15 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/03 14:15:56 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <stdio.h>
+#include <ctype.h>
 
-// toupper
-// : cout<<s2; cin>>s1;
 // prendre en compte le controle D
 
-int main(void)
+int main(int argc, char **argv)
 {
-    char buffer[524];
+    int i;
+    int j;
 
-    std::cout << "Hello !" << std::endl;
-    std::cout << "Enter input";
-    std::cin >> buffer;
-    std::cout << "YOU ENTERED : [" << buffer << "]" << std::endl;
+    i = 0;
+    j = 1;
+    if (argc < 2)
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    else
+    {
+        while (j < argc)
+        {
+            std::string input = argv[j];
+            i = 0;
+            while (input[i] != '\0')
+            {
+                input[i] = toupper(input[i]);
+                std::cout << input[i];
+                i++;
+            }
+            j++;
+        }
+        std::cout << std::endl;
+    }
     return (0);
 }
