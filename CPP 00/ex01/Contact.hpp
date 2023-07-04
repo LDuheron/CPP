@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:53:35 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/03 15:54:44 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:00:22 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,22 @@
 #include <iostream>
 #include <stdio.h>
 #include <ctype.h>
+#include <sstream>
 
 class Contact {
 
 public:
 
-    Contact(void);
-    ~Contact(void);
+    std::string FirstName;
+    std::string LastName;
+    std::string Nickname;
+    std::string PhoneNumber;
+    std::string DarkestSecret;
 
+    Contact( void );
+    ~Contact( void );
+
+    void GetInfo( void );
 };
 
 #endif
