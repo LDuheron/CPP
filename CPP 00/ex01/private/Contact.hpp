@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:53:35 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/04 17:00:22 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:55:36 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,33 @@
 #include <ctype.h>
 #include <sstream>
 
+# define INVALID -5
+# define EMPTY -4
+# define SUCCESS 1
+
 class Contact {
 
-public:
+private:
 
-    std::string FirstName;
-    std::string LastName;
-    std::string Nickname;
-    std::string PhoneNumber;
-    std::string DarkestSecret;
+    std::string	_FirstName;
+    std::string _LastName;
+    std::string _Nickname;
+    std::string _PhoneNumber;
+    std::string _DarkestSecret;
+
+public:
 
     Contact( void );
     ~Contact( void );
 
-    void GetInfo( void );
+	int		set_FirstName();
+	int		set_LastName();
+	int		set_Nickname();
+	int		set_PhoneNumber();
+	int		set_DarkestSecret();
+
+	void    displayContactInfo();			// print all
+    void    displayRepertory( int Index );	// print for search
 };
 
 #endif

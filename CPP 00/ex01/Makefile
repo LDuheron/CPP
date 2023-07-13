@@ -1,46 +1,71 @@
-#############################################
+######################################
+#              COMMANDS              #
+######################################
+CXX			=	c++
+LINK		=	clang++
+MKDIR		=	mkdir -p
+RM			=	rm -rf
 
-NAME := PhoneBook
+######################################
+#             EXECUTABLE             #
+######################################
+NAME		=	phonebook
 
-#############################################
+#######################################
+#             DIRECTORIES             #
+#######################################
+SRC_DIR		=	src
+OBJ_DIR		=	obj
+PRV_DIR		= 	private
 
-SRC := Contact.cpp		\
-		Phonebook.cpp	\
-		Main.cpp		\
+######################################
+#            SOURCE FILES            #
+######################################
+SRC			=							\
+				class/Contact.cpp		\
+				class/Phonebook.cpp		\
+				main.cpp
 
-OBJ	:=	$(SRC:.cpp=.o)
+######################################
+#            OBJECT FILES            #
+######################################
+OBJ			=	${SRC:.cpp=.o}
+OBJ			:=	${addprefix ${OBJ_DIR}/, ${OBJ}}
 
-#############################################
+DEP			=	${OBJ:.o=.d}
 
-CC          := c++
-CPPFLAGS      := -Wall -Wextra -Werror -std=c++98
+#######################################
+#                FLAGS                #
+#######################################
+CXXFLAGS	=	-c
+CXXFLAGS	+=	-Wall -Wextra -Werror
+CXXFLAGS	+=	-MMD -MP
+CXXFLAGS	+=	-Wshadow
+CXXFLAGS	+=	-std=c++98
+CXXFLAGS	+=	-I${PRV_DIR}
 
-#############################################
+#######################################
+#                RULES                #
+#######################################
+${NAME}: ${OBJ}
+	${LINK} $^ -o $@
 
-RM          := rm -f
-MAKEFLAGS   += --no-print-directory
+all: ${NAME}
 
+-include ${DEP}
 
-#############################################
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
-	$(info CREATED $(NAME))
+${OBJ_DIR}/%.o: ${SRC_DIR}/%.cpp
+	@${MKDIR} ${@D}
+	${CXX} $< ${CXXFLAGS} -o $@
 
 clean:
-	$(RM) $(OBJ)
+	${RM} ${OBJ_DIR} ${NAME} vgcore.*
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:
+	${RM} ${OBJ_DIR} ${NAME} vgcore.*
 
-re: fclean $(NAME)
+re: clean all
 
-#############################################
+fre: fclean all
 
-.PHONY: all clean fclean re
-
-.SILENT:
-
-#############################################
+.PHONY:	all clean fclean re fre
