@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:29:09 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/14 09:11:18 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:48:34 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,7 @@ int	Contact::set_DarkestSecret()
 	return (SUCCESS);
 }
 
-
-// displayContactInfo : This function displays all the information of a contact.
+// displayContactInfo : This function displays all the informations of a contact.
 
 void	Contact::displayContactInfo()
 {
@@ -108,9 +107,7 @@ void	Contact::displayContactInfo()
     std::cout << "Darkest secret : " << this->_DarkestSecret << "\n" << std::endl;
 }
 
-
-
-void	Contact::printInfoRepertory(std::string str)
+void	Contact::printInfoFormatRepertory(std::string str)
 {
 	if (str.length() > 10)
 		  std::cout << str.substr(0, 9) + '.' << "|";
@@ -128,13 +125,12 @@ void    Contact::displayRepertory(int Index)
         std::cout << std::endl;
     if (this->_FirstName.empty())
         std::cout << "| " << Index + 1 << " |          |          |          |" << std::endl;
-        
     else
     {
         std::cout << "| " << Index + 1 << " |";
-		printInfoRepertory(this->_FirstName);
-		printInfoRepertory(this->_LastName);
-		printInfoRepertory(this->_Nickname);
+		printInfoFormatRepertory(this->_FirstName);
+		printInfoFormatRepertory(this->_LastName);
+		printInfoFormatRepertory(this->_Nickname);
 		std::cout << std::endl;
     }
     if (Index == 7)

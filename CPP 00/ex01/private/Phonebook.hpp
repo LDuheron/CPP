@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:33:21 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/13 19:35:23 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/14 12:53:32 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@
 #include <ctype.h>
 #include <sstream>
 #include "Contact.hpp"
+#include <limits>
 
 class PhoneBook {
 private:
-   Contact contact[8];
+   Contact contact[9];
  
 public:
  
