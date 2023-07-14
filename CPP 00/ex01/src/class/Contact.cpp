@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:29:09 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/13 19:08:21 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:11:18 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,17 @@ void	Contact::displayContactInfo()
     std::cout << "Darkest secret : " << this->_DarkestSecret << "\n" << std::endl;
 }
 
+
+
+void	Contact::printInfoRepertory(std::string str)
+{
+	if (str.length() > 10)
+		  std::cout << str.substr(0, 9) + '.' << "|";
+	else
+	  std::cout << std::setfill(' ') << std::setw(10) << str.substr(0, 10) << "|";
+	
+}
+
 // displayRepertory: This function displays the first name, last name, and nickname 
 // of a contact, separate by a pipe and for 10n max.
 
@@ -121,10 +132,10 @@ void    Contact::displayRepertory(int Index)
     else
     {
         std::cout << "| " << Index + 1 << " |";
-        std::cout << std::setfill(' ') 
-                << std::setw(10) << this->_FirstName.substr(0, 10) << "|"
-                << std::setw(10) << this->_LastName.substr(0, 10) << "|"
-                << std::setw(10) << this->_Nickname.substr(0, 10) << "|\n";
+		printInfoRepertory(this->_FirstName);
+		printInfoRepertory(this->_LastName);
+		printInfoRepertory(this->_Nickname);
+		std::cout << std::endl;
     }
     if (Index == 7)
         std::cout << std::endl;

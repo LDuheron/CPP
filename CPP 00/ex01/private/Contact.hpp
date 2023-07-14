@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:53:35 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/13 16:55:36 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:11:28 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ public:
 
 	void    displayContactInfo();			// print all
     void    displayRepertory( int Index );	// print for search
+	void	printInfoRepertory(std::string str);
 };
 
 #endif
