@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:15:59 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/15 14:35:28 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:40:39 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::Zombie()
 {
-	this->_name = "Bob";
+	this->_name = "HORDE";
 	std::cout << _name << " created.\n";
 	return ;
 }
