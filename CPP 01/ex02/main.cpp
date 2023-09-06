@@ -6,11 +6,22 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 14:44:59 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/15 15:12:11 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/08/25 18:50:36 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
+/*
+
+Une reference comme un pointeur stocke l'adresse d'un objet situe ailleurs dans la memoire.
+ontrairement à un pointeur, une référence après son initialisation ne peut pas être définie
+pour faire référence à un autre objet ni prendre la valeur null.
+
+https://waytolearnx.com/2018/09/difference-entre-pointeur-et-reference.html
+
+*/
+
 
 int	main(void)
 {

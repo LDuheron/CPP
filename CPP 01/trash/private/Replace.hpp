@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 15:15:51 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/23 14:56:16 by lduheron         ###   ########.fr       */
+/*   Created: 2023/07/14 16:13:13 by lduheron          #+#    #+#             */
+/*   Updated: 2023/07/17 16:09:44 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "Weapon.hpp"
+#ifndef REPLACE_H
+# define REPLACE_H
 
-// Constructor
-HumanA::HumanA( std::string name, Weapon &weapon_to_set ) : name(name), weapon(weapon_to_set)
-{
-	// std::cout << "Constructor human A.\n";
-}
+#include <iostream>
+#include "Replace.hpp"
 
-// Destructor
-HumanA::~HumanA()
-{
-	// std::cout << "Destructor human A.\n";
-}
+# define ERROR -1
 
-void	HumanA::attack( void )
-{
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
-}
+class Replace{
+	private:
+
+	public:
+		Replace( std::string str );
+		~Replace( void );
+
+};
+
+#endif

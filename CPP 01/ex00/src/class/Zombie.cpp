@@ -6,7 +6,7 @@
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:15:59 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/14 19:23:13 by lduheron         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:02:31 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 // Constructor
 Zombie::Zombie(std::string name)
 {
-	this->name = name;
-	std::cout << this->name << " created.\n";
+	_name = name;
+	std::cout << _name << " created.\n";
 	return ;
 }
 
 // Destructor
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " destructed.\n";
+	std::cout << _name << " destructed.\n";
 	return ;
 }
 
 void	Zombie::announce( void )
 {
-	std::cout << ": BraiiiiiiinnnzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
 }

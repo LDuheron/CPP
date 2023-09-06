@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduheron <lduheron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 15:15:51 by lduheron          #+#    #+#             */
-/*   Updated: 2023/07/23 14:56:16 by lduheron         ###   ########.fr       */
+/*   Created: 2023/07/14 16:15:59 by lduheron          #+#    #+#             */
+/*   Updated: 2023/07/17 16:18:41 by lduheron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "Weapon.hpp"
+#include "Replace.hpp"
 
 // Constructor
-HumanA::HumanA( std::string name, Weapon &weapon_to_set ) : name(name), weapon(weapon_to_set)
-{
-	// std::cout << "Constructor human A.\n";
-}
+// Replace::Replace( std::string str )
+// {
+// 	std::cout << "Constructor replace.\n";
+// }
 
-// Destructor
-HumanA::~HumanA()
-{
-	// std::cout << "Destructor human A.\n";
-}
-
-void	HumanA::attack( void )
-{
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
-}
+// // Destructor
+// Replace::Replace()
+// {
+// 	std::cout << "Destructor replace.\n";
+// }
